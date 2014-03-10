@@ -11,12 +11,6 @@
 //views
 #import "DSDPageView.h"
 
-@interface DSDPageController ()
-
-@property DSDPageView *pageView;
-
-@end
-
 @implementation DSDPageController
 
 - (void)viewDidLoad
@@ -30,12 +24,6 @@
 	NSDictionary *views = @{@"page":self.pageView};
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[page]|" options:0 metrics:nil views:views]];
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[page]|" options:0 metrics:nil views:views]];
-	
-	//set the number of labels and the min/max edge and reload
-	self.pageView.numberOfLabels = 7;
-	self.pageView.minimumLeftEdge = 20;
-	self.pageView.maximumAdditionalOffset = 400; //approximates the value used by Dark Sky
-	[self.pageView reloadLabels];
 }
 
 - (void)updateViewForScrollFactor:(CGFloat)scrollFactor

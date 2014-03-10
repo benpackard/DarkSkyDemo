@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class DSDPageView;
 
 @interface DSDPageController : UIViewController
 
+@property DSDPageView *pageView;
 - (void)updateViewForScrollFactor:(CGFloat)scrollFactor;
 
 @end

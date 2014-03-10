@@ -51,7 +51,7 @@
 	
 		//scrollview and page control layout
 		NSDictionary *views = @{@"title":titleLabel, @"scroll":self.scrollView, @"content":self.contentView, @"pager":self.pageControl};
-		[self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[title][scroll][pager(==20)]|" options:0 metrics:nil views:views]];
+		[self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-30-[title][scroll][pager(==20)]|" options:0 metrics:nil views:views]];
 		[self addConstraint:[NSLayoutConstraint constraintWithItem:titleLabel
 														 attribute:NSLayoutAttributeCenterX
 														 relatedBy:NSLayoutRelationEqual

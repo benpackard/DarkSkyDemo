@@ -12,7 +12,6 @@
 
 @property NSInteger numberOfLabels, minimumLeftEdge, maximumAdditionalOffset;
 
-- (void)reloadLabels;
 - (void)setLabelsAlpha:(CGFloat)alpha;
 - (void)setLabelsLeftEdgeDistanceFactor:(CGFloat)distanceFactor;
 

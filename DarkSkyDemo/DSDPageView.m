@@ -8,13 +8,18 @@
 
 #import "DSDPageView.h"
 
+//views
+#import "DSDLabelAndBoxRow.h"
+
 @interface DSDPageView ()
 
-@property NSMutableArray *labels, *leftEdgeConstraints;
+@property NSMutableArray *labelViews, *leftEdgeConstraints;
 
 @end
 
 @implementation DSDPageView
+
+@synthesize numberOfLabels = _numberOfLabels;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -23,56 +28,70 @@
 	{
 		self.backgroundColor = [UIColor colorWithRed:238.0/255.0 green:238.0/255.0 blue:231.0/255.0 alpha:1.0];
 	
-		self.labels = [NSMutableArray array];
+		self.labelViews = [NSMutableArray array];
 		self.leftEdgeConstraints = [NSMutableArray array];
 		
 		//defaults
-		self.numberOfLabels = 7;
 		self.minimumLeftEdge = 30;
-		self.maximumAdditionalOffset = 320;
-		
-		[self reloadLabels];
+		self.maximumAdditionalOffset = 400; //seems to be close to the dark sky value
+		self.numberOfLabels = 7;
     }
     return self;
+}
+
+- (NSInteger)numberOfLabels
+{
+	return _numberOfLabels;
+}
+
+- (void)setNumberOfLabels:(NSInteger)numberOfLabels
+{
+	_numberOfLabels = numberOfLabels;
+	[self reloadLabels];
 }
 
 - (void)reloadLabels
 {
 	//remove the existing labels - this also removes the constraints from the view
-	for (UILabel *label in self.labels)
+	for (DSDLabelAndBoxRow *labelView in self.labelViews)
 	{
-		[label removeFromSuperview];
+		[labelView removeFromSuperview];
 	}
-	[self.labels removeAllObjects];
+	[self.labelViews removeAllObjects];
 	
 	//empty the constraints array
 	[self.leftEdgeConstraints removeAllObjects];
 		
 	//add the labels
-	UILabel *previousLabel = nil;
+	DSDLabelAndBoxRow *previousLabel = nil;
 	for (NSInteger i = 0; i < self.numberOfLabels; i++)
 	{
-		UILabel *label = [[UILabel alloc] init];
-		[self.labels addObject:label];
-		label.translatesAutoresizingMaskIntoConstraints = NO;
-		label.backgroundColor = [UIColor colorWithRed:238.0/255.0 green:238.0/255.0 blue:231.0/255.0 alpha:1.0];
-		label.text = @"Label";
-		label.font = [UIFont fontWithName:@"AvenirNext-Regular" size:20];
-		label.textColor = [UIColor colorWithRed:0.07 green:0.07 blue:0.07 alpha:1.0];
-		[self addSubview:label];
+		DSDLabelAndBoxRow *labelView = [[DSDLabelAndBoxRow alloc] init];
+		[self.labelViews addObject:labelView];
+		labelView.translatesAutoresizingMaskIntoConstraints = NO;
+		[self addSubview:labelView];
 		
 		//vertical layout
-		[self addConstraint:[NSLayoutConstraint constraintWithItem:label
+		[self addConstraint:[NSLayoutConstraint constraintWithItem:labelView
 														 attribute:NSLayoutAttributeTop
 														 relatedBy:NSLayoutRelationEqual
 															toItem:previousLabel ? previousLabel : self
 														 attribute:previousLabel ? NSLayoutAttributeBottom : NSLayoutAttributeTop
 														multiplier:1
-														  constant:40]];
-		previousLabel = label;
+														  constant:35]];
+		previousLabel = labelView;
+		
+		//width
+		[self addConstraint:[NSLayoutConstraint constraintWithItem:labelView
+														 attribute:NSLayoutAttributeWidth
+														 relatedBy:NSLayoutRelationEqual
+															toItem:self
+														 attribute:NSLayoutAttributeWidth
+														multiplier:1
+														  constant:-2 * self.minimumLeftEdge]];
 		
 		//add and store the left-edge constraint
-		NSLayoutConstraint *leftEdgeConstraint = [NSLayoutConstraint constraintWithItem:label
+		NSLayoutConstraint *leftEdgeConstraint = [NSLayoutConstraint constraintWithItem:labelView
 																			  attribute:NSLayoutAttributeLeft
 																			  relatedBy:NSLayoutRelationEqual
 																				 toItem:self
@@ -87,9 +106,9 @@
 - (void)setLabelsAlpha:(CGFloat)alpha
 {
 	//fade all labels as they move out of view
-	for (UILabel *label in self.labels)
+	for (DSDLabelAndBoxRow *labelView in self.labelViews)
 	{
-		label.alpha = alpha;
+		labelView.alpha = alpha;
 	}
 }
 

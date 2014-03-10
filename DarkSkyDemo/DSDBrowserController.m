@@ -76,7 +76,7 @@ static NSInteger const kNumberOfPages = 3; //could move this to a property
 	[self.pageControllers removeAllObjects];
 	
 	//add each page controller and its view
-	for (NSInteger i =0; i < kNumberOfPages; i++)
+	for (NSInteger i = 0; i < kNumberOfPages; i++)
 	{
 		//create the team controller
 		DSDPageController *pageController = [[DSDPageController alloc] initWithNibName:nil bundle:nil];
@@ -85,6 +85,7 @@ static NSInteger const kNumberOfPages = 3; //could move this to a property
 		
 		//add its view - align the view depending on its index
 		pageController.view.translatesAutoresizingMaskIntoConstraints = NO;
+		pageController.pageView.numberOfLabels = i == 0 ? 0 : 7; //no labels on the first page for demo purposes
 		[self.browserView.contentView addSubview:pageController.view];
 		NSDictionary *views = @{@"page":pageController.view};
 		[self.browserView.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[page]|" options:0 metrics:nil views:views]];
