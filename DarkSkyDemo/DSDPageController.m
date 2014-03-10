@@ -19,16 +19,6 @@
 
 @implementation DSDPageController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self)
-	{
-
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -44,7 +34,7 @@
 	//set the number of labels and the min/max edge and reload
 	self.pageView.numberOfLabels = 7;
 	self.pageView.minimumLeftEdge = 20;
-	self.pageView.maximumAdditionalOffset = 320; //approximates the value used by Dark Sky
+	self.pageView.maximumAdditionalOffset = 400; //approximates the value used by Dark Sky
 	[self.pageView reloadLabels];
 }
 

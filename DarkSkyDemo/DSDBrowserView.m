@@ -19,11 +19,19 @@
     self = [super initWithFrame:frame];
     if (self)
 	{
-		self.backgroundColor = [UIColor greenColor];
+		self.backgroundColor = [UIColor colorWithRed:238.0/255.0 green:238.0/255.0 blue:231.0/255.0 alpha:1.0];
+		
+		UILabel *titleLabel = [[UILabel alloc] init];
+		titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
+		titleLabel.backgroundColor = [UIColor colorWithRed:238.0/255.0 green:238.0/255.0 blue:231.0/255.0 alpha:1.0];
+		titleLabel.text = @"Dark Sky Demo by Ben Packard";
+		titleLabel.font = [UIFont fontWithName:@"AvenirNext-Regular" size:12];
+		titleLabel.textColor = [UIColor colorWithRed:0.07 green:0.07 blue:0.07 alpha:1.0];
+		[self addSubview:titleLabel];
 		
 		self.scrollView = [[UIScrollView alloc] init];
 		self.scrollView.translatesAutoresizingMaskIntoConstraints = NO;
-		self.scrollView.backgroundColor = [UIColor cyanColor];
+		self.scrollView.backgroundColor = [UIColor colorWithRed:238.0/255.0 green:238.0/255.0 blue:231.0/255.0 alpha:1.0];
 		self.scrollView.pagingEnabled = YES;
 		self.scrollView.showsHorizontalScrollIndicator = NO;
 		self.scrollView.alwaysBounceHorizontal = YES;
@@ -31,18 +39,26 @@
 		
 		self.contentView = [[UIView alloc] init];
 		self.contentView.translatesAutoresizingMaskIntoConstraints = NO;
-		self.contentView.backgroundColor = [UIColor blueColor];
 		[self.scrollView addSubview:self.contentView];
 		
 		self.pageControl = [[UIPageControl alloc] init];
 		self.pageControl.translatesAutoresizingMaskIntoConstraints = NO;
-		self.pageControl.backgroundColor = [UIColor redColor];
-		self.pageControl.enabled = NO; //touch events not implemented
+		self.pageControl.backgroundColor = [UIColor colorWithRed:238.0/255.0 green:238.0/255.0 blue:231.0/255.0 alpha:1.0];
+		self.pageControl.pageIndicatorTintColor = [UIColor colorWithRed:0.07 green:0.07 blue:0.07 alpha:0.5];
+		self.pageControl.currentPageIndicatorTintColor = [UIColor colorWithRed:0.07 green:0.07 blue:0.07 alpha:1.0];
+		self.pageControl.enabled = NO; //touch events for page control are not implemented
 		[self addSubview:self.pageControl];
 	
 		//scrollview and page control layout
-		NSDictionary *views = @{@"scroll":self.scrollView, @"content":self.contentView, @"pager":self.pageControl};
-		[self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[scroll][pager(==14)]|" options:0 metrics:nil views:views]];
+		NSDictionary *views = @{@"title":titleLabel, @"scroll":self.scrollView, @"content":self.contentView, @"pager":self.pageControl};
+		[self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[title][scroll][pager(==20)]|" options:0 metrics:nil views:views]];
+		[self addConstraint:[NSLayoutConstraint constraintWithItem:titleLabel
+														 attribute:NSLayoutAttributeCenterX
+														 relatedBy:NSLayoutRelationEqual
+															toItem:self
+														 attribute:NSLayoutAttributeCenterX
+														multiplier:1
+														  constant:0]];
 		[self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[scroll]|" options:0 metrics:nil views:views]];
 		[self addConstraint:[NSLayoutConstraint constraintWithItem:self.pageControl
 														 attribute:NSLayoutAttributeCenterX

@@ -21,14 +21,14 @@
     self = [super initWithFrame:frame];
     if (self)
 	{
-		self.backgroundColor = [UIColor yellowColor];
+		self.backgroundColor = [UIColor colorWithRed:238.0/255.0 green:238.0/255.0 blue:231.0/255.0 alpha:1.0];
 	
 		self.labels = [NSMutableArray array];
 		self.leftEdgeConstraints = [NSMutableArray array];
 		
 		//defaults
 		self.numberOfLabels = 7;
-		self.minimumLeftEdge = 20;
+		self.minimumLeftEdge = 30;
 		self.maximumAdditionalOffset = 320;
 		
 		[self reloadLabels];
@@ -38,7 +38,7 @@
 
 - (void)reloadLabels
 {
-	//remove the existing labels - also removes the constraints from the view
+	//remove the existing labels - this also removes the constraints from the view
 	for (UILabel *label in self.labels)
 	{
 		[label removeFromSuperview];
@@ -55,31 +55,20 @@
 		UILabel *label = [[UILabel alloc] init];
 		[self.labels addObject:label];
 		label.translatesAutoresizingMaskIntoConstraints = NO;
-		label.backgroundColor = [UIColor whiteColor];
+		label.backgroundColor = [UIColor colorWithRed:238.0/255.0 green:238.0/255.0 blue:231.0/255.0 alpha:1.0];
 		label.text = @"Label";
+		label.font = [UIFont fontWithName:@"AvenirNext-Regular" size:20];
+		label.textColor = [UIColor colorWithRed:0.07 green:0.07 blue:0.07 alpha:1.0];
 		[self addSubview:label];
 		
 		//vertical layout
-		if (previousLabel)
-		{
-			[self addConstraint:[NSLayoutConstraint constraintWithItem:label
-															 attribute:NSLayoutAttributeTop
-															 relatedBy:NSLayoutRelationEqual
-																toItem:previousLabel
-															 attribute:NSLayoutAttributeBottom
-															multiplier:1
-															  constant:40]];
-		}
-		else
-		{
-			[self addConstraint:[NSLayoutConstraint constraintWithItem:label
-															 attribute:NSLayoutAttributeTop
-															 relatedBy:NSLayoutRelationEqual
-																toItem:self
-															 attribute:NSLayoutAttributeTop
-															multiplier:1
-															  constant:100]];
-		}
+		[self addConstraint:[NSLayoutConstraint constraintWithItem:label
+														 attribute:NSLayoutAttributeTop
+														 relatedBy:NSLayoutRelationEqual
+															toItem:previousLabel ? previousLabel : self
+														 attribute:previousLabel ? NSLayoutAttributeBottom : NSLayoutAttributeTop
+														multiplier:1
+														  constant:40]];
 		previousLabel = label;
 		
 		//add and store the left-edge constraint

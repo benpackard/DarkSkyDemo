@@ -220,6 +220,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Made in Bletchley";
 				TargetAttributes = {
+					C538B68018CD542B00D0E464 = {
+						DevelopmentTeam = N7GBY74B36;
+					};
 					C538B69B18CD542B00D0E464 = {
 						TestTargetID = C538B68018CD542B00D0E464;
 					};
@@ -426,10 +429,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DarkSkyDemo/DarkSkyDemo-Prefix.pch";
 				INFOPLIST_FILE = "DarkSkyDemo/DarkSkyDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "FE1AABD9-C1E8-4D59-8E13-5E048D2F95F5";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -440,10 +445,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DarkSkyDemo/DarkSkyDemo-Prefix.pch";
 				INFOPLIST_FILE = "DarkSkyDemo/DarkSkyDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "FE1AABD9-C1E8-4D59-8E13-5E048D2F95F5";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
