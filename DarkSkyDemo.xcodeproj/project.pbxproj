@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2358B34AFB1A4C46A8ABE38B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 901E900217F64119A1EDFFE5 /* libPods.a */; };
 		C538B68518CD542B00D0E464 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C538B68418CD542B00D0E464 /* Foundation.framework */; };
 		C538B68718CD542B00D0E464 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C538B68618CD542B00D0E464 /* CoreGraphics.framework */; };
 		C538B68918CD542B00D0E464 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C538B68818CD542B00D0E464 /* UIKit.framework */; };
@@ -19,6 +20,10 @@
 		C538B6A018CD542B00D0E464 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C538B68818CD542B00D0E464 /* UIKit.framework */; };
 		C538B6A818CD542B00D0E464 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C538B6A618CD542B00D0E464 /* InfoPlist.strings */; };
 		C538B6AA18CD542B00D0E464 /* DarkSkyDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C538B6A918CD542B00D0E464 /* DarkSkyDemoTests.m */; };
+		C538B6B818CD54D300D0E464 /* DSDBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = C538B6B718CD54D300D0E464 /* DSDBrowserController.m */; };
+		C538B6BB18CD54EA00D0E464 /* DSDBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = C538B6BA18CD54EA00D0E464 /* DSDBrowserView.m */; };
+		C538B6BE18CD5DCF00D0E464 /* DSDPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = C538B6BD18CD5DCF00D0E464 /* DSDPageController.m */; };
+		C538B6C118CD5DE000D0E464 /* DSDPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C538B6C018CD5DE000D0E464 /* DSDPageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		82CC5F25E3914A698040F92A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		901E900217F64119A1EDFFE5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C538B68118CD542B00D0E464 /* DarkSkyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DarkSkyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C538B68418CD542B00D0E464 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C538B68618CD542B00D0E464 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,6 +55,14 @@
 		C538B6A518CD542B00D0E464 /* DarkSkyDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DarkSkyDemoTests-Info.plist"; sourceTree = "<group>"; };
 		C538B6A718CD542B00D0E464 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C538B6A918CD542B00D0E464 /* DarkSkyDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DarkSkyDemoTests.m; sourceTree = "<group>"; };
+		C538B6B618CD54D200D0E464 /* DSDBrowserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSDBrowserController.h; sourceTree = "<group>"; };
+		C538B6B718CD54D300D0E464 /* DSDBrowserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSDBrowserController.m; sourceTree = "<group>"; };
+		C538B6B918CD54EA00D0E464 /* DSDBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSDBrowserView.h; sourceTree = "<group>"; };
+		C538B6BA18CD54EA00D0E464 /* DSDBrowserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSDBrowserView.m; sourceTree = "<group>"; };
+		C538B6BC18CD5DCF00D0E464 /* DSDPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSDPageController.h; sourceTree = "<group>"; };
+		C538B6BD18CD5DCF00D0E464 /* DSDPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSDPageController.m; sourceTree = "<group>"; };
+		C538B6BF18CD5DE000D0E464 /* DSDPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSDPageView.h; sourceTree = "<group>"; };
+		C538B6C018CD5DE000D0E464 /* DSDPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSDPageView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +73,7 @@
 				C538B68718CD542B00D0E464 /* CoreGraphics.framework in Frameworks */,
 				C538B68918CD542B00D0E464 /* UIKit.framework in Frameworks */,
 				C538B68518CD542B00D0E464 /* Foundation.framework in Frameworks */,
+				2358B34AFB1A4C46A8ABE38B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +97,7 @@
 				C538B6A318CD542B00D0E464 /* DarkSkyDemoTests */,
 				C538B68318CD542B00D0E464 /* Frameworks */,
 				C538B68218CD542B00D0E464 /* Products */,
+				82CC5F25E3914A698040F92A /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +117,7 @@
 				C538B68618CD542B00D0E464 /* CoreGraphics.framework */,
 				C538B68818CD542B00D0E464 /* UIKit.framework */,
 				C538B69D18CD542B00D0E464 /* XCTest.framework */,
+				901E900217F64119A1EDFFE5 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -109,6 +127,14 @@
 			children = (
 				C538B69318CD542B00D0E464 /* DSDAppDelegate.h */,
 				C538B69418CD542B00D0E464 /* DSDAppDelegate.m */,
+				C538B6B618CD54D200D0E464 /* DSDBrowserController.h */,
+				C538B6B718CD54D300D0E464 /* DSDBrowserController.m */,
+				C538B6B918CD54EA00D0E464 /* DSDBrowserView.h */,
+				C538B6BA18CD54EA00D0E464 /* DSDBrowserView.m */,
+				C538B6BC18CD5DCF00D0E464 /* DSDPageController.h */,
+				C538B6BD18CD5DCF00D0E464 /* DSDPageController.m */,
+				C538B6BF18CD5DE000D0E464 /* DSDPageView.h */,
+				C538B6C018CD5DE000D0E464 /* DSDPageView.m */,
 				C538B69618CD542B00D0E464 /* Images.xcassets */,
 				C538B68B18CD542B00D0E464 /* Supporting Files */,
 			);
@@ -151,9 +177,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C538B6AD18CD542B00D0E464 /* Build configuration list for PBXNativeTarget "DarkSkyDemo" */;
 			buildPhases = (
+				570012D46F964B049EC71D3D /* Check Pods Manifest.lock */,
 				C538B67D18CD542B00D0E464 /* Sources */,
 				C538B67E18CD542B00D0E464 /* Frameworks */,
 				C538B67F18CD542B00D0E464 /* Resources */,
+				306D8EFCE47C47F4B474FF07 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -235,12 +263,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		306D8EFCE47C47F4B474FF07 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		570012D46F964B049EC71D3D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C538B67D18CD542B00D0E464 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C538B6BE18CD5DCF00D0E464 /* DSDPageController.m in Sources */,
 				C538B69518CD542B00D0E464 /* DSDAppDelegate.m in Sources */,
+				C538B6BB18CD54EA00D0E464 /* DSDBrowserView.m in Sources */,
+				C538B6C118CD5DE000D0E464 /* DSDPageView.m in Sources */,
+				C538B6B818CD54D300D0E464 /* DSDBrowserController.m in Sources */,
 				C538B69118CD542B00D0E464 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,6 +422,7 @@
 		};
 		C538B6AE18CD542B00D0E464 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82CC5F25E3914A698040F92A /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -370,6 +436,7 @@
 		};
 		C538B6AF18CD542B00D0E464 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82CC5F25E3914A698040F92A /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -442,6 +509,7 @@
 				C538B6AF18CD542B00D0E464 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C538B6B018CD542B00D0E464 /* Build configuration list for PBXNativeTarget "DarkSkyDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +518,7 @@
 				C538B6B218CD542B00D0E464 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
